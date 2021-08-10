@@ -1,5 +1,6 @@
 import create from "zustand";
 
+// the store in which where we will store the states relevant to filtering the jobs
 const useJobFilterStore = create((set) => ({
   company: "",
   setCompany: (payload) => set({ company: payload }),

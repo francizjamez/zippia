@@ -1,6 +1,7 @@
 import defaultCompany from "../public/defaultCompany.png";
 import Image from "next/image";
 
+//The component for each job
 const Job = ({ data }) => {
   const { companyName, jobTitle, shortDesc, companyLogo } = data;
   return (

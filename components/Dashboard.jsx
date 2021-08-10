@@ -1,6 +1,7 @@
 import Image from "next/image";
 import useJobFilterStore from "../store/jobsFilterStore";
 
+//The dashboard component
 const Dashboard = () => {
   const setCompany = useJobFilterStore((state) => state.setCompany);
   const setRecent = useJobFilterStore((state) => state.setRecent);
@@ -13,7 +14,7 @@ const Dashboard = () => {
       </div>
       <div
         className={`${!isFilterShowing && `opacity-0`}
-        transition fixed md:absolute z-10 w-screen grid place-items-center left-0
+        transition fixed sm:absolute z-10 w-screen grid place-items-center left-0 
       `}
       >
         <div className="rounded bg-white p-4 px-8 shadow-lg relative top-24 md:top-10 z-10">
@@ -26,14 +27,14 @@ const Dashboard = () => {
               placeholder="Search for jobs by company"
               className="pl-9 border border-gray-500 rounded h-10 w-64"
             />
-            <div>
+            <div className="flex gap-1 items-center">
               <input
                 type="checkbox"
                 id="recent"
                 value={recent}
                 onChange={() => setRecent(!recent)}
               />
-              <label htmlFor="recent" className="cursor-pointer">
+              <label htmlFor="recent" className="cursor-pointer select-none">
                 RECENT
               </label>
             </div>
