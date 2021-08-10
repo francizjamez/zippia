@@ -1,34 +1,33 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Zeppia Jobs finder
 
-## Getting Started
+## Author: Francis James Dela Cruz
 
-First, run the development server:
+### Overview:
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+- Zeppia jobs finder is an app where we get 40 jobs from Zeppia that that matches the criteria from the payload in the post request in Zeppia's endpoint: https://www.zippia.com/api/jobs/
+- We only show maximum 10 jobs at a time, in order for other jobs to show there is a search input where we can type a company name and it will only show jobs that partially matches the company name with the given input.
+- An additional filter can be triggered in order to show only recent jobs which are jobs that are posted no longer than 7 days ago.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Misc
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+- The jobs are taken from a post request the endpoint https://www.zippia.com/api/jobs/ with a payload of {
+  "companySkills": true,
+  "dismissedListingHashes": [],
+  "fetchJobDesc": true,
+  "jobTitle": "Business Analyst",
+  "locations": [],
+  "numJobs": 20,
+  "previousListingHashes": []
+  }
+- Techs used: Nextjs, Tailwindcss, Zustand
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+### About the project
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+- This is a paid test/project by Zeppia
+- This test/project is from Upwork
 
-## Learn More
+### About the Author
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- Github: https://github.com/francizjamez
+- Upwork: https://www.upwork.com/freelancers/~01f77dce4617b627c1
+- Email: francizjamez@gmail.com / francizjamez2@gmail.com
