@@ -71,7 +71,7 @@ export default function Home({ allJobsData }) {
         </div>
         <button
           onClick={() => setIsFilterShowing(!isFilterShowing)}
-          className="sm:hidden grid place-content-center fixed bottom-2 right-2 p-2 bg-gray-200 rounded-full"
+          className="lg:hidden grid place-content-center fixed bottom-2 right-2 p-2 bg-gray-200 rounded-full"
         >
           <Image src="/filterIcon.png" width="48" height="48" />
         </button>
