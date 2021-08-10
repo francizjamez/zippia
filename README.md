@@ -10,7 +10,10 @@
 
 ### Misc
 
-- The jobs are taken from a post request the endpoint https://www.zippia.com/api/jobs/ with a payload of {
+- The jobs are taken from a post request the endpoint https://www.zippia.com/api/jobs/ with a payload of
+
+```
+{
   "companySkills": true,
   "dismissedListingHashes": [],
   "fetchJobDesc": true,
@@ -18,7 +21,9 @@
   "locations": [],
   "numJobs": 20,
   "previousListingHashes": []
-  }
+}
+```
+
 - Techs used: Nextjs, Tailwindcss, Zustand
 
 ### About the project
