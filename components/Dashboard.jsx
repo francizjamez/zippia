@@ -14,7 +14,7 @@ const Dashboard = () => {
       </div>
       <div
         className={`${!isFilterShowing && `opacity-0`}
-        transition fixed sm:absolute z-10 w-screen grid place-items-center left-0 
+        transition fixed lg:absolute z-10 w-screen grid place-items-center left-0 
       `}
       >
         <div className="rounded bg-white p-4 px-8 shadow-lg relative top-24 md:top-10 z-10">
