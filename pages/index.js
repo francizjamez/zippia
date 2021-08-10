@@ -6,18 +6,18 @@ import Job from "../components/Job";
 import useJobFilterStore from "../store/jobsFilterStore";
 import Image from "next/image";
 
-let allJobsData = [];
+// let allJobsData = [];
 
-export default function Home() {
+export default function Home({ allJobsData }) {
   const [jobsData, setJobsData] = useState([]);
   const jobsFilter = useJobFilterStore((state) => state);
 
-  useEffect(() => {
-    getJobsData().then((data) => {
-      allJobsData = data;
-      setJobsData(data.slice(0, 10));
-    });
-  }, []);
+  // useEffect(() => {
+  //   getJobsData().then((data) => {
+  //     allJobsData = data;
+  //     setJobsData(data.slice(0, 10));
+  //   });
+  // }, []);
 
   useEffect(() => {
     let filteredData = [...allJobsData];
@@ -55,7 +55,7 @@ export default function Home() {
       </Head>
       <main>
         <Dashboard />
-        <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-28 mt-48 md:mt-44">
+        <div className=" grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-28 mt-48 md:mt-44">
           {jobsData.map((jobData) => (
             <Job data={jobData}></Job>
           ))}
@@ -75,7 +75,24 @@ export default function Home() {
   );
 }
 
-async function getJobsData() {
+// async function getJobsData() {
+//   const requestPayload = {
+//     companySkills: true,
+//     dismissedListingHashes: [],
+//     fetchJobDesc: true,
+//     jobTitle: "Business Analyst",
+//     locations: [],
+//     numJobs: 20,
+//     previousListingHashes: [],
+//   };
+//   const res = await axios.post(
+//     "https://www.zippia.com/api/jobs/",
+//     requestPayload
+//   );
+//   return res.data.jobs;
+// }
+
+export async function getStaticProps(context) {
   const requestPayload = {
     companySkills: true,
     dismissedListingHashes: [],
@@ -89,5 +106,17 @@ async function getJobsData() {
     "https://www.zippia.com/api/jobs/",
     requestPayload
   );
-  return res.data.jobs;
+
+  if (!res.data) {
+    return {
+      redirect: {
+        destination: "/",
+        permanent: false,
+      },
+    };
+  }
+
+  return {
+    props: { allJobsData: res.data.jobs }, // will be passed to the page component as props
+  };
 }
