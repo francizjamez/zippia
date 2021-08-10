@@ -55,7 +55,7 @@ export default function Home({ allJobsData }) {
       </Head>
       <main>
         <Dashboard />
-        <div className=" grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-28 mt-48 md:mt-44">
+        <div className="mx-auto container grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-28 mt-48 md:mt-44">
           {jobsData.map((jobData) => (
             <Job data={jobData}></Job>
           ))}
@@ -64,7 +64,7 @@ export default function Home({ allJobsData }) {
           onClick={() =>
             jobsFilter.setIsFilterShowing(!jobsFilter.isFilterShowing)
           }
-          className="md:hidden grid place-content-center fixed bottom-2 right-2 p-2 bg-gray-200 rounded-full"
+          className="lg:hidden grid place-content-center fixed bottom-2 right-2 p-2 bg-gray-200 rounded-full"
         >
           <Image src="/filterIcon.png" width="48" height="48" />
         </button>
